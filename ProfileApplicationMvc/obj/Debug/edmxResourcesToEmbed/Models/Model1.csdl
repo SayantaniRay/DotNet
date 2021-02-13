@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EmployeeOfficeDetailsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="EmployeeDetail">
+    <Key>
+      <PropertyRef Name="empid" />
+    </Key>
+    <Property Name="empid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Addr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="phno" Type="Int32" />
+    <Property Name="Sal" Type="Int32" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Gen" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="Dep" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Comp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="EmployeeOfficeDetailsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="EmployeeDetail" EntityType="Self.EmployeeDetail" />
+    <EntitySet Name="image" EntityType="EmployeeOfficeDetailsModel.image" />
+  </EntityContainer>
+  <EntityType Name="image">
+    <Key>
+      <PropertyRef Name="imgId" />
+    </Key>
+    <Property Name="imgId" Type="Int32" Nullable="false" />
+    <Property Name="imgPath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

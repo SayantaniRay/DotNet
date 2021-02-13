@@ -1,0 +1,70 @@
+﻿
+@{
+    var p = ViewBag.vb;
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/Css/bootstrap.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+    @using (Html.BeginForm("Index", "SearchID", FormMethod.Post))
+    {
+        <div class="container" id="d1">
+            <div class="form-check-inline">
+                <label>Enter Employee ID :</label>
+                @Html.TextBox("ide", null, new { @id = "Txtide", @class = "form-control", @placeholder = "Your Employee ID", @style = "width:550px" })
+                <button type="button" id="btnsrch" class="btn btn-success">Search Data</button>
+                <label id="Lblmsg">@ViewBag.vw</label>
+            </div>
+        </div>
+    }
+
+    <div class="container" id="d2">
+        @if(p != null)
+        {
+            <table id="Tblide" class="table table-striped">
+                <tr>
+
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Contact Number</th>
+                    <th>Salary</th>
+                    <th>City</th>
+                    <th>Gender</th>
+                    <th>Department</th>
+                    <th>Company</th>
+
+                </tr>
+
+                @foreach (var str in p)
+                {
+                    <tr>
+
+                        <td>@str.empid</td>
+                        <td>@str.Name</td>
+                        <td>@str.Addr</td>
+                        <td>@str.phno</td>
+                        <td>@str.Sal</td>
+                        <td>@str.City</td>
+                        <td>@str.Gen</td>
+                        <td>@str.Dep</td>
+                        <td>@str.Comp</td>
+
+
+                    </tr>
+
+                }
+
+            </table>
+        }
+    </div>
+</body>
+</html>

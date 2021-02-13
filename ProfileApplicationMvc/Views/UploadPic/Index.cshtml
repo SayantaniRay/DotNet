@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/Css/bootstrap.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    @using(Html.BeginForm("Index", "UploadPic", FormMethod.Post , new { enctype="multipart/form-data"}))
+    {
+        <div class="container" id="d1">
+            <div class="form-check-inline">
+                <label>Choose Image :</label>
+                @Html.TextBox("fileupload1", null, new { @type="file", @class="form-control" ,@style = "width:550px" })
+                <button type="button" id="btnupload" class="btn btn-primary">Upload</button>
+                <label id="Lblmsg">@ViewBag.vw</label>
+            </div>
+        </div>
+    }
+    <div>
+    </div>
+</body>
+</html>

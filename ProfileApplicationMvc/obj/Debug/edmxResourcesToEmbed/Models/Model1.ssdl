@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EmployeeOfficeDetailsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="EmployeeDetail">
+    <Key>
+      <PropertyRef Name="empid" />
+    </Key>
+    <Property Name="empid" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Addr" Type="varchar" MaxLength="50" />
+    <Property Name="phno" Type="int" />
+    <Property Name="Sal" Type="int" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="Gen" Type="char" MaxLength="10" />
+    <Property Name="Dep" Type="varchar" MaxLength="50" />
+    <Property Name="Comp" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="image">
+    <Key>
+      <PropertyRef Name="imgId" />
+    </Key>
+    <Property Name="imgId" Type="int" Nullable="false" />
+    <Property Name="imgPath" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="EmployeeOfficeDetailsModelStoreContainer">
+    <EntitySet Name="EmployeeDetail" EntityType="Self.EmployeeDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="image" EntityType="Self.image" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
